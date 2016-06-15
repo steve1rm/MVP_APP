@@ -9,7 +9,6 @@ import android.widget.Toast;
 
 import com.sunsystem.mvpapp.di.AppComponent;
 import com.sunsystem.mvpapp.di.AppModule;
-import com.sunsystem.mvpapp.di.AppParser;
 import com.sunsystem.mvpapp.di.DaggerAppComponent;
 
 import javax.inject.Inject;

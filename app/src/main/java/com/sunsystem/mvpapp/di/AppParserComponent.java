@@ -3,7 +3,6 @@ package com.sunsystem.mvpapp.di;
 import com.sunsystem.mvpapp.Presenter;
 
 import javax.inject.Singleton;
-
 import dagger.Component;
 
 /**
