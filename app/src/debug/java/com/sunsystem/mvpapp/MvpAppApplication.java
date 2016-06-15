@@ -5,7 +5,6 @@ import android.app.Application;
 import com.sunsystem.mvpapp.di.AppParser;
 import com.sunsystem.mvpapp.di.AppParserComponent;
 import com.sunsystem.mvpapp.di.DaggerAppParserComponent;
-
 import timber.log.Timber;
 
 /**
@@ -28,6 +27,7 @@ public class MvpAppApplication extends Application {
         });
     }
 
+    /* Inject the dependency into the presenter */
     public static AppParserComponent DaggerInjector() {
         return DaggerAppParserComponent.builder()
                 .appParser(new AppParser(mApplication))

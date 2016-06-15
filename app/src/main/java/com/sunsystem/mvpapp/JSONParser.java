@@ -1,7 +1,6 @@
 package com.sunsystem.mvpapp;
 
 import android.content.Context;
-
 import timber.log.Timber;
 
 /**
@@ -22,5 +21,6 @@ public class JSONParser implements JSONParserContract {
     @Override
     public void parseJSONString() {
         /* Do parsing stuff here */
+        Timber.d("parseJSONString");
     }
 }

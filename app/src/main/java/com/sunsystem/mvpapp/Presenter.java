@@ -12,9 +12,11 @@ public class Presenter implements PresenterContract {
 
     @Inject JSONParser mJSONParser;
 
+    /* The constructor that will accept the contract */
     public Presenter(ViewContract viewContract) {
         this.mViewContract = viewContract;
 
+        /* Check that the contract is valid */
         if(mViewContract != null) {
             Timber.d("mViewContract != null");
         }
@@ -22,18 +24,21 @@ public class Presenter implements PresenterContract {
             Timber.w("mViewContract == null");
         }
 
+        /* Inject the dependency */
         MvpAppApplication.DaggerInjector().inject(Presenter.this);
 
         if(mJSONParser != null) {
             Timber.d("mJSONParser != null");
+            mViewContract.onShowMessageSuccess();
         }
         else {
             Timber.e("mJSONParser == null");
+            mViewContract.onShowMessageFailure();
         }
     }
 
     @Override
     public void getJSONResponse() {
-        mViewContract.onShowMessageSuccess();
+        mJSONParser.parseJSONString();
     }
 }
